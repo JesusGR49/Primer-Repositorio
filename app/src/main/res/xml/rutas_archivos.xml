@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Rutas que el FileProvider puede compartir con otras aplicaciones.
+
+    Solo damos acceso a la carpeta "evidencias" que está dentro de la
+    memoria temporal (caché) de la propia aplicación. Ahí se copian las
+    fotografías justo antes de compartirlas por WhatsApp, correo, etc.
+-->
+<paths>
+    <cache-path
+        name="evidencias"
+        path="evidencias/" />
+</paths>

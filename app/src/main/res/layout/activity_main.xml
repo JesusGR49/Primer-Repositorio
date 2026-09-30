@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7FB"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- TÍTULO -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="EvidenciaCESBA"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="#07346D"
+            android:gravity="center"
+            android:layout_marginBottom="6dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Programación Móvil 1"
+            android:textSize="16sp"
+            android:textColor="#666666"
+            android:gravity="center"
+            android:layout_marginBottom="24dp" />
+
+        <!-- IMAGEVIEW -->
+        <ImageView
+            android:id="@+id/imgFoto"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:background="#E8EAF0"
+            android:contentDescription="Fotografía de evidencia"
+            android:scaleType="centerCrop"
+            android:src="@android:drawable/ic_menu_gallery" />
+
+        <!-- NIVEL 1: FECHA DE EVIDENCIA Y HORA DE CAPTURA -->
+        <TextView
+            android:id="@+id/txtFechaHora"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Aún no hay fecha ni hora de captura"
+            android:textColor="#07346D"
+            android:textSize="14sp"
+            android:background="#E8EAF0"
+            android:padding="10dp"
+            android:layout_marginTop="2dp" />
+
+        <!-- NIVEL 1: BOTONES DE CÁMARA Y ELIMINAR -->
+        <Button
+            android:id="@+id/btnTomarFoto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TOMAR FOTOGRAFÍA"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#07346D"
+            android:layout_marginTop="14dp" />
+
+        <Button
+            android:id="@+id/btnEliminarFoto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ELIMINAR FOTOGRAFÍA"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#C62828"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="18dp" />
+
+        <!-- NIVEL 2: CONTADOR DE FOTOGRAFÍAS -->
+        <TextView
+            android:id="@+id/txtContador"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fotografías capturadas: 0"
+            android:textStyle="bold"
+            android:textColor="#07346D"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:background="#DDE3EE"
+            android:padding="10dp" />
+
+        <!-- NIVEL 2: ESTADO DE LA EVIDENCIA -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Estado de la evidencia"
+            android:textStyle="bold"
+            android:textColor="#07346D"
+            android:textSize="16sp"
+            android:layout_marginTop="18dp" />
+
+        <Spinner
+            android:id="@+id/spnEstado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#E8EAF0"
+            android:layout_marginTop="5dp" />
+
+        <TextView
+            android:id="@+id/txtEstadoEvidencia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Estado actual: Pendiente"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="18dp" />
+
+        <!-- NIVEL 3: GALERÍA DE EVIDENCIAS -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Galería de evidencias"
+            android:textStyle="bold"
+            android:textColor="#07346D"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/txtGaleriaVacia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Todavía no hay fotografías en el historial"
+            android:textColor="#777777"
+            android:textSize="13sp"
+            android:layout_marginTop="5dp" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="6dp">
+
+            <LinearLayout
+                android:id="@+id/contenedorGaleria"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" />
+
+        </HorizontalScrollView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Toca una miniatura para verla · déjala presionada para eliminarla"
+            android:textColor="#777777"
+            android:textSize="12sp"
+            android:layout_marginBottom="20dp" />
+
+        <!-- TÍTULO DE EVIDENCIA -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Título de la evidencia"
+            android:textStyle="bold"
+            android:textColor="#07346D"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/edtTitulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ej. Equipo de laboratorio"
+            android:inputType="textCapSentences"
+            android:padding="12dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="18dp" />
+
+        <!-- DESCRIPCIÓN -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Descripción"
+            android:textStyle="bold"
+            android:textColor="#07346D"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/edtDescripcion"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:gravity="top"
+            android:hint="Describe la evidencia..."
+            android:inputType="textMultiLine|textCapSentences"
+            android:padding="12dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="24dp" />
+
+        <!-- BOTÓN GUARDAR -->
+        <Button
+            android:id="@+id/btnGuardar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="GUARDAR EVIDENCIA"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#FF6F0C" />
+
+        <!-- NIVEL 3: GUARDAR EN EL DISPOSITIVO Y COMPARTIR -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <Button
+                android:id="@+id/btnGuardarGaleria"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="GUARDAR FOTO"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#2E7D32"
+                android:layout_marginEnd="5dp" />
+
+            <Button
+                android:id="@+id/btnCompartir"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="COMPARTIR"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#1565C0"
+                android:layout_marginStart="5dp" />
+
+        </LinearLayout>
+
+        <!-- NIVEL 3: FICHA DE EVIDENCIAS -->
+        <Button
+            android:id="@+id/btnFicha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="GENERAR FICHA DE EVIDENCIAS"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#5E35B1"
+            android:layout_marginTop="10dp" />
+
+        <!-- ESTADO -->
+        <TextView
+            android:id="@+id/txtEstado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Aún no se ha tomado una fotografía"
+            android:textColor="#777777"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="20dp" />
+
+    </LinearLayout>
+</ScrollView>
